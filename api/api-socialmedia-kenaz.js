@@ -1,12 +1,19 @@
-{
-	"type": "service_account",
-	"project_id": "teste-de-integracao-241117",
-	"private_key_id": "ea52fe6c222d73587e73e62376fc810b189b5b84",
-	"private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC3YjSxN7Uai+wF\nuR/29FqvrP3JH0fgsUGpGroA+aqy2DnrBoEqzbmxaFhWsN3sgQfv+ZKyWkgmytxO\nj13k9pukG94CR0Dw8CzgVX+q2J0xVAAlxuv4hqta9z5Pedx7zvqhAXQNSvTlYJ41\ngH8RdXRDmr8IQn/Z1rKY/l4QWUWs2hOiqRJ67Ru33I+vg2aW2i/4+WyOpPcBaicr\n8Tst7xb0Mp5Enohn74L5usRkr3Y+GQC/uFs0K0JfQ4KzyKi+9otv2k4SWwjK8PtJ\nttupBd19yDsiHw1Lf5oYahLa+EXQgqFm0ECIbCzKYN+OqyPqFsucDlbT3r/ex2ke\nN8wUbxZXAgMBAAECggEAAcfOoBYrm/oRCm5qU38wyZoFnMgjbjYi/RFVXP5Kpkz1\nm52kjUIlx7bfVe5LiBU9jn0SxHnFxd+SWiv93p7tuhVBVkHdT41Af9R8EXUyzJfP\nRhh4VvoBmcG7jhFfmM83MPkALZvwZMTRiVheqGQfPheQFH5L33yon0JsrsNWg7Dz\nr4CkUIubFVSSMqojAzQtniYMVy06SSDybw4Iag08wU+o4AXMVYJZWlkE+CYPZgqr\nQrO47IgJpRx4wg1G8YTFBDb0tWXi7Hy/WtJoS+O/YOFNWHq4jcvyQrqDFEdF9wOU\nL+lweDnBciMgDkMtYfN3KCVGDLokLYWpQRQCin97gQKBgQDcjzN1nOjN2g2HlojP\nMmacWLbg3DE6fHZipQ+C1Q0y4UTrXLbvJHicd1BGNMAn+5l7SRC5GaFpmDd4TFP1\nNk+AqTgqlVBWu1qWfgANcgZwrI/fHelbmBT1tvLRJbSyc9l39V+tSgxt3CfAmldO\ngkRDOlG09a1pYWspU0W6UkYO/QKBgQDU2cPMa6p1GluZvF9NMoSTriKYspBc3wJt\nYJD5bWLducF+DRSjkbwvoyH6f6zjYxcDTXhfJ4VhmYHBtrrcnyyVRgaIe8ALOc8H\noWlLrnA+4sWzMP7PczcfOC4cj+xEVF1aDOLN/lhjffZhvQ3JcGTnPQuYJmjtZxSx\n8LA97ua84wKBgQDcgkcehVuzwxfXwUbScD9qfL+KHFsTcDAj+4aAdWUWw2XWMgGr\nIbl8JUWai066Kq+ONMSFavyXx9ldamJePIhLx+Mhn9qMfA/beemvh5qst7m3hf4y\n1t/NsbUeKSZ5a522cxnO9MNsarlLtIMpOM/qrrnVw/I183HiBSEnYO4uOQKBgEX/\nFxSyk2vPLzBvcifA5Thrm5T7o93muLWffA2Km2ivHaKGSrM/ydMgopvuQLzGaVr8\nrwkbxhFCmhlKLkk/TzoHvT5E8/K9IAgyXJ42z1Le4IT9J86w5P+vSfq6mcgetlRW\nyH9VlVuioNOjiFUmUQh6WsW+W+M2cufRbyPu3JJhAoGAC4YX2r5kFME6NSyqyrvs\nUHejoQNAw3TQMHHPDhnlLMatzF8YCUQn+65VyX3vS+wAOguG162ACA6Grqb2A44h\nWISU298tpp9wRl+mRm0E2JDtQYJShMexppM4RqQ4Anclooy2FsjzOzYaZcv7USvY\n42unpqUciJ8aJ9g5kg/rT2Y=\n-----END PRIVATE KEY-----\n",
-	"client_email": "teste-957@teste-de-integracao-241117.iam.gserviceaccount.com",
-	"client_id": "116260544976781831554",
-	"auth_uri": "https://accounts.google.com/o/oauth2/auth",
-	"token_uri": "https://oauth2.googleapis.com/token",
-	"auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-	"client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/teste-957%40teste-de-integracao-241117.iam.gserviceaccount.com"
-  }
+var unirest = require("unirest");
+
+var req = unirest("GET", "https://twinesocial.p.rapidapi.com/v1/content");
+
+req.query({
+	"campaign": "kenazmarketing"
+});
+
+req.headers({
+	"x-rapidapi-host": "twinesocial.p.rapidapi.com",
+	"x-rapidapi-key": "27fe776426msh3c45f78dbc25942p1af9b0jsn1bb56775318f"
+});
+
+
+req.end(function (res) {
+	if (res.error) throw new Error(res.error);
+
+	console.log(res.body);
+});
